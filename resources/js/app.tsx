@@ -1,0 +1,11 @@
+import { createRoot } from 'react-dom/client';
+
+import { App } from './app/App';
+
+const container = document.getElementById('app');
+
+if (!container) {
+    throw new Error('App mount point #app not found.');
+}
+
+createRoot(container).render(<App />);

@@ -1,0 +1,77 @@
+@layer base {
+    * {
+        min-width: 0;
+    }
+
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-rendering: optimizeLegibility;
+    }
+
+    body {
+        background-color: var(--color-canvas);
+        color: var(--color-ink);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Visible, consistent keyboard focus */
+    :focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+
+    ::selection {
+        background-color: var(--color-primary-soft);
+        color: var(--color-primary-dark);
+    }
+
+    /* Respect reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+    /* Prevent horizontal overflow from fixed overlays */
+    html:has(dialog[open]) {
+        overflow: hidden;
+    }
+}
+
+@layer utilities {
+    /* Hide content from the visual layout but keep it for screen readers */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    /* Scrollbar styling (desktop employee portal) */
+    .scrollbar-thin {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-line) transparent;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        background-color: var(--color-line);
+        border-radius: 9999px;
+    }
+}

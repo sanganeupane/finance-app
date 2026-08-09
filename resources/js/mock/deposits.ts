@@ -1,0 +1,40 @@
+import type { Deposit } from '@/types/deposit';
+
+export const mockDeposits: Deposit[] = [
+    {
+        id: 'dep-4001',
+        customerId: 'c-1001',
+        type: 'fixed',
+        status: 'active',
+        certificateNumber: 'FD-2025-00127',
+        depositAmount: 1000000,
+        interestRate: 6.5,
+        tenureMonths: 12,
+        maturityDate: '2026-09-15',
+        startDate: '2025-09-15',
+    },
+    {
+        id: 'dep-4002',
+        customerId: 'c-1001',
+        type: 'recurring',
+        status: 'active',
+        certificateNumber: 'RD-2024-00892',
+        depositAmount: 300000,
+        interestRate: 7.0,
+        tenureMonths: 24,
+        maturityDate: '2026-11-01',
+        startDate: '2024-11-01',
+    },
+    {
+        id: 'dep-4003',
+        customerId: 'c-1002',
+        type: 'fixed',
+        status: 'matured',
+        certificateNumber: 'FD-2024-00315',
+        depositAmount: 500000,
+        interestRate: 6.0,
+        tenureMonths: 12,
+        maturityDate: '2025-12-10',
+        startDate: '2024-12-10',
+    },
+];

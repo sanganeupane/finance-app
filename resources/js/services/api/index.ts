@@ -1,0 +1,12 @@
+export { apiClient } from './client';
+export { API_ENDPOINTS } from './endpoints';
+export { customerService } from './services/customerService';
+export { accountsService } from './services/accountsService';
+export { transactionsService } from './services/transactionsService';
+export { cardsService } from './services/cardsService';
+export { loansService } from './services/loansService';
+export { depositsService } from './services/depositsService';
+export { investmentsService } from './services/investmentsService';
+export { insightsService } from './services/insightsService';
+export { recommendationsService } from './services/recommendationsService';
+export { copilotService } from './services/copilotService';

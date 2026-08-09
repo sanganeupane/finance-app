@@ -1,0 +1,61 @@
+@theme {
+    /* Typography */
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+    /* 8px spacing grid: every spacing utility step = 8px */
+    --spacing: 0.5rem;
+
+    /* Colors */
+    --color-primary: #0b8f68;
+    --color-primary-dark: #087a5a;
+    --color-primary-soft: #e8f7f1;
+    --color-primary-softer: #f4fbf8;
+
+    --color-canvas: #f7faf9;
+    --color-surface: #ffffff;
+
+    --color-ink: #17211d;
+    --color-muted: #78847f;
+    --color-line: #e6eeea;
+
+    --color-success: #20a779;
+    --color-warning: #f2b84b;
+    --color-danger: #e66b7a;
+    --color-info: #6d9eff;
+    --color-violet: #9b7fea;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+
+    /* Shadows */
+    --shadow-xs: 0 1px 2px rgb(23 33 29 / 0.05);
+    --shadow-sm: 0 1px 3px rgb(23 33 29 / 0.07), 0 1px 2px rgb(23 33 29 / 0.05);
+    --shadow-md: 0 4px 12px rgb(23 33 29 / 0.08);
+    --shadow-lg: 0 12px 32px rgb(23 33 29 / 0.12);
+    --shadow-focus: 0 0 0 3px rgb(11 143 104 / 0.2);
+}
+
+@theme inline {
+    /* Semantic aliases (emit as CSS variables, no utilities) */
+    --color-background: var(--color-canvas);
+    --color-white: #ffffff;
+    --color-text: var(--color-ink);
+    --color-secondary: var(--color-muted);
+    --color-border: var(--color-line);
+    --color-purple: var(--color-violet);
+}
+
+:root {
+    /* Motion */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 400ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Elevation (not emitted as Tailwind utilities) */
+    --elevation-header: 0 1px 0 rgb(23 33 29 / 0.06);
+    --elevation-bottom-nav: 0 -1px 0 rgb(23 33 29 / 0.06);
+}
