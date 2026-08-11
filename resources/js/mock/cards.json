@@ -1,0 +1,31 @@
+[
+    {
+        "id": "card-1001",
+        "accountId": "acc-1001",
+        "brand": "visa",
+        "type": "debit",
+        "status": "active",
+        "cardNumber": "4400660012348901",
+        "maskedNumber": "4400 **** **** 8901",
+        "holderName": "Aarav Sharma",
+        "expiryMonth": 9,
+        "expiryYear": 2029,
+        "cvv": "123"
+    },
+    {
+        "id": "card-1002",
+        "accountId": "acc-1002",
+        "brand": "mastercard",
+        "type": "credit",
+        "status": "active",
+        "cardNumber": "5423998877664830",
+        "maskedNumber": "5423 **** **** 4830",
+        "holderName": "Aarav Sharma",
+        "expiryMonth": 11,
+        "expiryYear": 2027,
+        "cvv": "456",
+        "creditLimit": 300000,
+        "outstandingBalance": 84250,
+        "availableCredit": 215750
+    }
+]

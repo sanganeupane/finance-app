@@ -20,19 +20,19 @@ import {
 } from '@/components/ui';
 
 const COLOR_TOKENS = [
-    { name: 'primary', value: '#0B8F68', className: 'bg-primary' },
-    { name: 'primary-dark', value: '#087A5A', className: 'bg-primary-dark' },
-    { name: 'primary-soft', value: '#E8F7F1', className: 'bg-primary-soft' },
-    { name: 'primary-softer', value: '#F4FBF8', className: 'bg-primary-softer' },
+    { name: 'primary', value: '#008F63', className: 'bg-primary' },
+    { name: 'primary-dark', value: '#00704E', className: 'bg-primary-dark' },
+    { name: 'primary-soft', value: '#DFF4EC', className: 'bg-primary-soft' },
+    { name: 'primary-softer', value: '#F1FAF5', className: 'bg-primary-softer' },
     { name: 'canvas', value: '#F7FAF9', className: 'bg-canvas' },
     { name: 'surface', value: '#FFFFFF', className: 'bg-surface' },
-    { name: 'ink', value: '#17211D', className: 'bg-ink' },
-    { name: 'muted', value: '#78847F', className: 'bg-muted' },
-    { name: 'line', value: '#E6EEEA', className: 'bg-line' },
-    { name: 'success', value: '#20A779', className: 'bg-success' },
-    { name: 'warning', value: '#F2B84B', className: 'bg-warning' },
-    { name: 'danger', value: '#E66B7A', className: 'bg-danger' },
-    { name: 'info', value: '#6D9EFF', className: 'bg-info' },
+    { name: 'ink', value: '#111827', className: 'bg-ink' },
+    { name: 'muted', value: '#6B7280', className: 'bg-muted' },
+    { name: 'line', value: '#E5E7EB', className: 'bg-line' },
+    { name: 'success', value: '#16A34A', className: 'bg-success' },
+    { name: 'warning', value: '#F59E0B', className: 'bg-warning' },
+    { name: 'danger', value: '#EF4444', className: 'bg-danger' },
+    { name: 'info', value: '#3B82F6', className: 'bg-info' },
     { name: 'violet', value: '#9B7FEA', className: 'bg-violet' },
 ];
 

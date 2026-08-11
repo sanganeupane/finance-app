@@ -9,8 +9,10 @@ export interface Account {
     status: AccountStatus;
     name: string;
     accountNumber: string;
+    maskedNumber: string;
     balance: number;
-    currency: 'NPR';
+    availableBalance: number;
+    currency: 'NPR' | 'USD';
     openedAt: string;
     branch: string;
     interestRate: number;

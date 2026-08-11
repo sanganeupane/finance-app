@@ -1,0 +1,44 @@
+[
+    {
+        "id": "loan-1001",
+        "customerId": "c-1001",
+        "type": "home",
+        "status": "active",
+        "loanNumber": "LN-2021-0008",
+        "principal": 8500000,
+        "outstanding": 5220000,
+        "interestRate": 10.5,
+        "tenureMonths": 240,
+        "emiAmount": 84750,
+        "nextDueDate": "2026-08-15",
+        "sanctionedAt": "2021-05-10"
+    },
+    {
+        "id": "loan-1002",
+        "customerId": "c-1001",
+        "type": "personal",
+        "status": "active",
+        "loanNumber": "LN-2023-0112",
+        "principal": 800000,
+        "outstanding": 512400,
+        "interestRate": 14.0,
+        "tenureMonths": 60,
+        "emiAmount": 18600,
+        "nextDueDate": "2026-08-20",
+        "sanctionedAt": "2023-02-01"
+    },
+    {
+        "id": "loan-1003",
+        "customerId": "c-1001",
+        "type": "auto",
+        "status": "active",
+        "loanNumber": "LN-2022-0045",
+        "principal": 2200000,
+        "outstanding": 1184000,
+        "interestRate": 11.0,
+        "tenureMonths": 60,
+        "emiAmount": 47850,
+        "nextDueDate": "2026-08-05",
+        "sanctionedAt": "2022-09-18"
+    }
+]

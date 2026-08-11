@@ -1,0 +1,52 @@
+[
+    {
+        "id": "ins-1001",
+        "customerId": "c-1001",
+        "severity": "positive",
+        "category": "savings",
+        "title": "You are 12% ahead on savings",
+        "description": "Your average monthly savings rate is 22%, above the regional median of 19%. Consider allocating an extra NPR 5,000 to your fixed deposit.",
+        "recommendation": "Increase monthly fixed deposit contribution by NPR 5,000.",
+        "createdAt": "2026-08-01T08:00:00"
+    },
+    {
+        "id": "ins-1002",
+        "customerId": "c-1001",
+        "severity": "warning",
+        "category": "spending",
+        "title": "Dining spend is up 6.1%",
+        "description": "Dining expenses grew faster than your overall spending this month. Setting a monthly dining budget could smooth this category.",
+        "recommendation": "Set a NPR 35,000 dining budget for August.",
+        "createdAt": "2026-08-01T08:00:00"
+    },
+    {
+        "id": "ins-1003",
+        "customerId": "c-1001",
+        "severity": "info",
+        "category": "opportunity",
+        "title": "Higher-yield deposit available",
+        "description": "A 1-year fixed deposit at 8.5% would earn an estimated NPR 21,250 extra interest on NPR 250,000 compared to your savings rate.",
+        "recommendation": "Review the fixed deposit offer in Investments.",
+        "createdAt": "2026-07-31T08:00:00"
+    },
+    {
+        "id": "ins-1004",
+        "customerId": "c-1001",
+        "severity": "critical",
+        "category": "fraud",
+        "title": "Potential duplicate card charge",
+        "description": "Two identical charges of NPR 4,820.00 appear within minutes at the same merchant. Please confirm these were yours.",
+        "recommendation": "Review the last 48h of card activity and block the card if unrecognized.",
+        "createdAt": "2026-07-31T19:15:00"
+    },
+    {
+        "id": "ins-1005",
+        "customerId": "c-1001",
+        "severity": "info",
+        "category": "loan",
+        "title": "You could refinance your auto loan",
+        "description": "Current lenders offer auto rates near 10.2% versus your 11.0%. Refinancing could reduce your EMI by roughly NPR 1,900.",
+        "recommendation": "Compare refinancing offers before your next EMI cycle.",
+        "createdAt": "2026-07-29T08:00:00"
+    }
+]

@@ -1,0 +1,142 @@
+{
+    "id": "dash-1001",
+    "greeting": "Good morning",
+    "userName": "Aarav",
+    "totalBalance": 2450500,
+    "currency": "NPR",
+    "primaryAccount": {
+        "id": "acc-1001",
+        "customerId": "c-1001",
+        "type": "savings",
+        "status": "active",
+        "name": "Primary Savings",
+        "accountNumber": "0101001234567890",
+        "maskedNumber": "**** **** 8901",
+        "balance": 2450500,
+        "availableBalance": 2420300,
+        "currency": "NPR",
+        "openedAt": "2018-03-12",
+        "branch": "Naxal",
+        "interestRate": 4.5
+    },
+    "primaryCard": {
+        "id": "card-1001",
+        "accountId": "acc-1001",
+        "brand": "visa",
+        "type": "debit",
+        "status": "active",
+        "cardNumber": "4400660012348901",
+        "maskedNumber": "4400 **** **** 8901",
+        "holderName": "Aarav Sharma",
+        "expiryMonth": 9,
+        "expiryYear": 2029,
+        "cvv": "123"
+    },
+    "quickActions": [
+        { "id": "qa-send", "label": "Send", "icon": "Send", "route": "/customer/payments/send" },
+        { "id": "qa-request", "label": "Request", "icon": "QrCode", "route": "/customer/payments" },
+        { "id": "qa-deposit", "label": "Deposit", "icon": "PiggyBank", "route": "/customer/deposits" },
+        { "id": "qa-pay", "label": "Pay", "icon": "Landmark", "route": "/customer/payments/bills" }
+    ],
+    "summary": {
+        "accounts": { "count": 4, "totalBalance": 8251500 },
+        "cards": { "count": 2, "totalLimit": 300000 },
+        "loans": { "count": 3, "totalOutstanding": 6916400 },
+        "investments": { "count": 6, "totalValue": 3588700 }
+    },
+    "recentTransactions": [
+        {
+            "id": "tx-1001",
+            "accountId": "acc-1001",
+            "type": "credit",
+            "status": "completed",
+            "category": "salary",
+            "description": "Salary credit",
+            "merchant": "Mount Everest Tech",
+            "amount": 185000,
+            "currency": "NPR",
+            "reference": "TXN-884211",
+            "balanceAfter": 2450500,
+            "performedAt": "2026-08-01T09:15:00"
+        },
+        {
+            "id": "tx-1002",
+            "accountId": "acc-1001",
+            "type": "debit",
+            "status": "completed",
+            "category": "groceries",
+            "description": "Grocery shopping",
+            "merchant": "Bhatbhateni Supermarket",
+            "amount": 4820,
+            "currency": "NPR",
+            "reference": "TXN-884210",
+            "balanceAfter": 2265500,
+            "performedAt": "2026-07-31T18:42:00"
+        },
+        {
+            "id": "tx-1003",
+            "accountId": "acc-1001",
+            "type": "debit",
+            "status": "completed",
+            "category": "utilities",
+            "description": "Electricity bill",
+            "merchant": "Nepal Electricity Authority",
+            "amount": 2350,
+            "currency": "NPR",
+            "reference": "TXN-884208",
+            "balanceAfter": 2270320,
+            "performedAt": "2026-07-30T10:05:00"
+        },
+        {
+            "id": "tx-1004",
+            "accountId": "acc-1001",
+            "type": "debit",
+            "status": "completed",
+            "category": "dining",
+            "description": "Dinner with friends",
+            "merchant": "Roadhouse Cafe",
+            "amount": 3200,
+            "currency": "NPR",
+            "reference": "TXN-884205",
+            "balanceAfter": 2272670,
+            "performedAt": "2026-07-29T20:18:00"
+        }
+    ],
+    "marketSnapshot": {
+        "status": "open",
+        "index": "NEPSE",
+        "currentValue": 21847.32,
+        "change": 312.45,
+        "percentage": 1.45,
+        "sentiment": "bullish"
+    },
+    "trendingInvestments": [
+        {
+            "id": "inv-1002",
+            "name": "Nabil Bank Limited",
+            "symbol": "NABIL",
+            "currentValue": 342500,
+            "change": 32500,
+            "percentage": 10.48,
+            "trend": "up"
+        },
+        {
+            "id": "inv-1006",
+            "name": "Nepal Telecom",
+            "symbol": "NTC",
+            "currentValue": 192000,
+            "change": 6000,
+            "percentage": 3.23,
+            "trend": "up"
+        },
+        {
+            "id": "inv-1005",
+            "name": "Siddhartha Focused Fund",
+            "symbol": "SFF",
+            "currentValue": 768000,
+            "change": -42000,
+            "percentage": -5.19,
+            "trend": "down"
+        }
+    ]
+}

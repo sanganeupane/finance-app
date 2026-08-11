@@ -1,15 +1,20 @@
+export type FinancialHealthRating = 'excellent' | 'good' | 'fair' | 'poor';
+
+export type FinancialHealthFactorStatus = 'good' | 'average' | 'poor';
+
 export interface FinancialHealthFactor {
-    key: string;
+    id: string;
     label: string;
-    score: number; // 0 - 100
-    weight: number;
+    value: number; // 0 - 100
+    weight: number; // contribution weight (%)
+    status: FinancialHealthFactorStatus;
 }
 
 export interface FinancialHealth {
     customerId: string;
     score: number; // 0 - 100
-    grade: 'excellent' | 'good' | 'fair' | 'poor';
-    trend: number; // percentage change vs last quarter
+    rating: FinancialHealthRating;
+    summary: string;
     factors: FinancialHealthFactor[];
-    lastUpdatedAt: string;
+    updatedAt: string;
 }

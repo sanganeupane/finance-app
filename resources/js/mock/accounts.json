@@ -1,0 +1,62 @@
+[
+    {
+        "id": "acc-1001",
+        "customerId": "c-1001",
+        "type": "savings",
+        "status": "active",
+        "name": "Primary Savings",
+        "accountNumber": "0101001234567890",
+        "maskedNumber": "**** **** 8901",
+        "balance": 2450500,
+        "availableBalance": 2420300,
+        "currency": "NPR",
+        "openedAt": "2018-03-12",
+        "branch": "Naxal",
+        "interestRate": 4.5
+    },
+    {
+        "id": "acc-1002",
+        "customerId": "c-1001",
+        "type": "current",
+        "status": "active",
+        "name": "Current Account",
+        "accountNumber": "0102001234567890",
+        "maskedNumber": "**** **** 4520",
+        "balance": 480250,
+        "availableBalance": 480250,
+        "currency": "NPR",
+        "openedAt": "2019-07-01",
+        "branch": "Baneshwor",
+        "interestRate": 2.0
+    },
+    {
+        "id": "acc-1003",
+        "customerId": "c-1001",
+        "type": "fixed-deposit",
+        "status": "active",
+        "name": "Fixed Deposit",
+        "accountNumber": "0103001234567890",
+        "maskedNumber": "**** **** 2231",
+        "balance": 5000000,
+        "availableBalance": 0,
+        "currency": "NPR",
+        "openedAt": "2024-01-15",
+        "branch": "Naxal",
+        "interestRate": 8.2
+    },
+    {
+        "id": "acc-1004",
+        "customerId": "c-1001",
+        "type": "salary",
+        "status": "active",
+        "name": "Salary Account",
+        "accountNumber": "0104001234567890",
+        "maskedNumber": "**** **** 7710",
+        "balance": 320750,
+        "availableBalance": 320750,
+        "currency": "NPR",
+        "openedAt": "2021-11-20",
+        "branch": "Baneshwor",
+        "interestRate": 3.0
+    }
+]

@@ -1,4 +1,4 @@
-import { apiClient } from '../client';
+import { apiClient, unwrap } from '../client';
 import { API_ENDPOINTS } from '../endpoints';
 
 export interface CopilotMessage {
@@ -7,6 +7,11 @@ export interface CopilotMessage {
 }
 
 export const copilotService = {
-    listConversations: (customerId: string) =>
-        apiClient.get<{ data: CopilotMessage[] }>(API_ENDPOINTS.copilot.conversation(customerId)),
+    listConversations: async () =>
+        unwrap(apiClient.get<{ data: CopilotMessage[] }>(API_ENDPOINTS.copilot.conversation)),
+
+    sendMessage: async (content: string) =>
+        unwrap(
+            apiClient.post<{ data: CopilotMessage }>(API_ENDPOINTS.copilot.conversation, { content }),
+        ),
 };

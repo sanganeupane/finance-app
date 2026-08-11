@@ -1,0 +1,56 @@
+[
+    {
+        "id": "ntf-1001",
+        "customerId": "c-1001",
+        "type": "transaction",
+        "title": "Payment received",
+        "body": "NPR 15,000.00 received from Sita Gurung.",
+        "isRead": false,
+        "createdAt": "2026-08-01T11:05:00"
+    },
+    {
+        "id": "ntf-1002",
+        "customerId": "c-1001",
+        "type": "alert",
+        "title": "EMI due soon",
+        "body": "Your home loan EMI of NPR 84,750.00 is due on 15 Aug.",
+        "isRead": false,
+        "createdAt": "2026-08-01T09:30:00"
+    },
+    {
+        "id": "ntf-1003",
+        "customerId": "c-1001",
+        "type": "promotion",
+        "title": "8.5% fixed deposit offer",
+        "body": "Lock in 8.5% p.a. on a 1-year fixed deposit this month.",
+        "isRead": true,
+        "createdAt": "2026-07-31T14:00:00"
+    },
+    {
+        "id": "ntf-1004",
+        "customerId": "c-1001",
+        "type": "system",
+        "title": "New statement available",
+        "body": "Your July 2026 account statement is ready to download.",
+        "isRead": true,
+        "createdAt": "2026-07-28T08:45:00"
+    },
+    {
+        "id": "ntf-1005",
+        "customerId": "c-1001",
+        "type": "transaction",
+        "title": "Card transaction",
+        "body": "NPR 4,820.00 spent at Bhatbhateni Supermarket.",
+        "isRead": false,
+        "createdAt": "2026-07-31T18:42:00"
+    },
+    {
+        "id": "ntf-1006",
+        "customerId": "c-1001",
+        "type": "alert",
+        "title": "Unusual login detected",
+        "body": "A new device logged into your account. If this was you, no action is needed.",
+        "isRead": false,
+        "createdAt": "2026-07-30T22:10:00"
+    }
+]

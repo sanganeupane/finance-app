@@ -1,0 +1,44 @@
+{
+    "customerId": "c-1001",
+    "score": 78,
+    "rating": "good",
+    "summary": "Your financial health is good. Strong savings and low credit utilization, but a higher loan burden keeps the score from excellent.",
+    "factors": [
+        {
+            "id": "fh-1001",
+            "label": "Savings rate",
+            "value": 22,
+            "weight": 25,
+            "status": "good"
+        },
+        {
+            "id": "fh-1002",
+            "label": "Credit utilization",
+            "value": 28,
+            "weight": 20,
+            "status": "good"
+        },
+        {
+            "id": "fh-1003",
+            "label": "Debt to income",
+            "value": 41,
+            "weight": 25,
+            "status": "average"
+        },
+        {
+            "id": "fh-1004",
+            "label": "Emergency fund",
+            "value": 6,
+            "weight": 15,
+            "status": "average"
+        },
+        {
+            "id": "fh-1005",
+            "label": "On-time payments",
+            "value": 100,
+            "weight": 15,
+            "status": "good"
+        }
+    ],
+    "updatedAt": "2026-08-01T08:00:00"
+}

@@ -1,0 +1,33 @@
+{
+    "customerId": "c-1001",
+    "month": "2026-07",
+    "totalSpent": 214350,
+    "averageDaily": 7145,
+    "comparisonToLastMonth": 4.3,
+    "budget": 250000,
+    "budgetUsed": 85.7,
+    "categories": [
+        { "id": "cat-groceries", "category": "Groceries", "amount": 61200, "percentage": 28.6, "color": "#008f63", "trend": 3.2 },
+        { "id": "cat-dining", "category": "Dining", "amount": 39800, "percentage": 18.6, "color": "#f59e0b", "trend": 6.1 },
+        { "id": "cat-shopping", "category": "Shopping", "amount": 34850, "percentage": 16.3, "color": "#3b82f6", "trend": -2.4 },
+        { "id": "cat-transport", "category": "Transport", "amount": 21400, "percentage": 10.0, "color": "#8b5cf6", "trend": -1.8 },
+        { "id": "cat-utilities", "category": "Utilities", "amount": 18600, "percentage": 8.7, "color": "#ec4899", "trend": 4.5 },
+        { "id": "cat-entertainment", "category": "Entertainment", "amount": 29300, "percentage": 13.7, "color": "#14b8a6", "trend": 8.9 },
+        { "id": "cat-health", "category": "Health", "amount": 9200, "percentage": 4.3, "color": "#ef4444", "trend": -5.6 }
+    ],
+    "trend": [
+        { "month": "Feb", "amount": 181200 },
+        { "month": "Mar", "amount": 198400 },
+        { "month": "Apr", "amount": 176900 },
+        { "month": "May", "amount": 221800 },
+        { "month": "Jun", "amount": 205600 },
+        { "month": "Jul", "amount": 214350 }
+    ],
+    "topMerchants": [
+        { "name": "Bhatbhateni Supermarket", "amount": 24500, "count": 12 },
+        { "name": "Roadhouse Cafe", "amount": 18200, "count": 6 },
+        { "name": "Daraz", "amount": 16400, "count": 9 },
+        { "name": "Nepal Oil Corporation", "amount": 12800, "count": 8 },
+        { "name": "QFX Cinemas", "amount": 6900, "count": 5 }
+    ]
+}

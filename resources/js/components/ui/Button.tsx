@@ -1,4 +1,4 @@
-import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import type { ComponentProps, ReactNode, Ref } from 'react';
 
 import { LoaderCircle } from 'lucide-react';
 
@@ -8,13 +8,14 @@ export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'dan
 
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ComponentProps<'button'> {
     variant?: ButtonVariant;
     size?: ButtonSize;
     isLoading?: boolean;
     fullWidth?: boolean;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
+    ref?: Ref<HTMLButtonElement>;
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -31,23 +32,21 @@ const sizeClasses: Record<ButtonSize, string> = {
     lg: 'h-12 px-5 text-base',
 };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-    (
-        {
-            className,
-            variant = 'primary',
-            size = 'md',
-            isLoading = false,
-            fullWidth = false,
-            leftIcon,
-            rightIcon,
-            disabled,
-            children,
-            type = 'button',
-            ...props
-        },
-        ref,
-    ) => (
+export function Button({
+    className,
+    variant = 'primary',
+    size = 'md',
+    isLoading = false,
+    fullWidth = false,
+    leftIcon,
+    rightIcon,
+    disabled,
+    children,
+    type = 'button',
+    ref,
+    ...props
+}: ButtonProps) {
+    return (
         <button
             ref={ref}
             type={type}
@@ -67,7 +66,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             {children}
             {!isLoading ? rightIcon : null}
         </button>
-    ),
-);
-
-Button.displayName = 'Button';
+    );
+}

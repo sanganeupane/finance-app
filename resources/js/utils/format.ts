@@ -1,11 +1,18 @@
 /**
  * Formatting utilities shared across the application.
- * All money is displayed in NPR (Nepalese Rupee).
+ * Money is displayed in NPR by default; pass a currency for market data.
  */
 
 const nprFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'NPR',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+});
+
+const usdFormatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
 });
@@ -19,9 +26,13 @@ const compactFormatter = new Intl.NumberFormat('en-US', {
     maximumFractionDigits: 1,
 });
 
-/** `12345` -> `NPR 12,345.00` */
-export function formatCurrency(amount: number): string {
-    return nprFormatter.format(amount);
+function moneyFormatter(currency: 'NPR' | 'USD'): Intl.NumberFormat {
+    return currency === 'USD' ? usdFormatter : nprFormatter;
+}
+
+/** `12345` -> `NPR 12,345.00` (or USD for market data) */
+export function formatCurrency(amount: number, currency: 'NPR' | 'USD' = 'NPR'): string {
+    return moneyFormatter(currency).format(amount);
 }
 
 /** `12345` -> `12,345` */
@@ -30,8 +41,8 @@ export function formatNumber(value: number): string {
 }
 
 /** `1_250_000` -> `NPR 1.3M` (compact for dashboards) */
-export function formatCurrencyCompact(amount: number): string {
-    return `NPR ${compactFormatter.format(amount)}`;
+export function formatCurrencyCompact(amount: number, currency: 'NPR' | 'USD' = 'NPR'): string {
+    return `${currency === 'USD' ? 'USD' : 'NPR'} ${compactFormatter.format(amount)}`;
 }
 
 /** `12.5` -> `12.5%` */
@@ -40,8 +51,8 @@ export function formatPercent(value: number, digits = 1): string {
 }
 
 /** Signed currency, e.g. `-500` -> `-NPR 500.00` (for transaction flows) */
-export function formatSignedCurrency(amount: number): string {
-    const value = nprFormatter.format(Math.abs(amount));
+export function formatSignedCurrency(amount: number, currency: 'NPR' | 'USD' = 'NPR'): string {
+    const value = moneyFormatter(currency).format(Math.abs(amount));
     return amount < 0 ? `-${value}` : `+${value}`;
 }
 

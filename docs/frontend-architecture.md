@@ -115,6 +115,16 @@ toasts, reduced-motion support. Never rely on color alone (Badge dot, Alert icon
 - No auth tokens in `localStorage`; Laravel session cookies only.
 - `cvv` on `Card` is a typed placeholder and must never be rendered.
 
+## JSX conventions (Blade-aligned)
+
+JSX must mirror the HTML + CSS structure used in Blade views:
+
+- Semantic elements (`<section>`, `<header>`, `<article>`, `<nav>`, `<h1>`–`<h3>`, `<ul>/<li>`, `<p>`) instead of anonymous `<div>` soup.
+- Class-based styling with Tailwind utility classes via `className` — same classes you would write as `class="..."` in Blade.
+- Consistent page structure: `<section>` root → `<header>` (eyebrow badge + `<h1>` + description) → content sections.
+- React 19 components receive `ref` as a normal prop (no `forwardRef`), keeping component code close to plain HTML.
+- No inline styles; no arbitrary hex/px values; always use design tokens.
+
 ## Naming conventions
 
 - Files: `PascalCase.tsx` for components, `camelCase.ts` for modules/utils.

@@ -24,7 +24,7 @@ export interface Transaction {
     description: string;
     merchant?: string | null;
     amount: number;
-    currency: 'NPR';
+    currency: 'NPR' | 'USD';
     reference: string;
     balanceAfter: number;
     performedAt: string;

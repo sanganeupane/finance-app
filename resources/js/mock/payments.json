@@ -1,0 +1,140 @@
+{
+    "balance": 2450500,
+    "recent": [
+        {
+            "id": "pay-1001",
+            "type": "mobile",
+            "title": "Nepal Telecom top-up",
+            "subtitle": "Mobile recharge",
+            "amount": 500,
+            "currency": "NPR",
+            "status": "completed",
+            "reference": "PMT-552101",
+            "createdAt": "2026-07-23T09:48:00"
+        },
+        {
+            "id": "pay-1002",
+            "type": "bill",
+            "title": "Electricity bill",
+            "subtitle": "Nepal Electricity Authority",
+            "amount": 2350,
+            "currency": "NPR",
+            "status": "completed",
+            "reference": "PMT-551980",
+            "createdAt": "2026-07-30T10:05:00"
+        },
+        {
+            "id": "pay-1003",
+            "type": "transfer",
+            "title": "Transfer to Sita Gurung",
+            "subtitle": "Same bank transfer",
+            "amount": 15000,
+            "currency": "NPR",
+            "status": "completed",
+            "reference": "PMT-551944",
+            "createdAt": "2026-07-21T14:20:00"
+        },
+        {
+            "id": "pay-1004",
+            "type": "utility",
+            "title": "Internet bill",
+            "subtitle": "WorldLink Communications",
+            "amount": 1499,
+            "currency": "NPR",
+            "status": "pending",
+            "reference": "PMT-551877",
+            "createdAt": "2026-08-02T08:15:00"
+        }
+    ],
+    "billers": [
+        {
+            "id": "b-1001",
+            "name": "Nepal Electricity Authority",
+            "category": "utilities",
+            "logo": "Zap",
+            "billerCode": "NEA-01"
+        },
+        {
+            "id": "b-1002",
+            "name": "Nepal Telecom",
+            "category": "telecom",
+            "logo": "Smartphone",
+            "billerCode": "NTC-01"
+        },
+        {
+            "id": "b-1003",
+            "name": "WorldLink Communications",
+            "category": "internet",
+            "logo": "Wifi",
+            "billerCode": "WLC-01"
+        },
+        {
+            "id": "b-1004",
+            "name": "DishHome",
+            "category": "television",
+            "logo": "Tv",
+            "billerCode": "DISH-01"
+        },
+        {
+            "id": "b-1005",
+            "name": "Subisu CableNet",
+            "category": "internet",
+            "logo": "Network",
+            "billerCode": "SUB-01"
+        }
+    ],
+    "payees": [
+        {
+            "id": "p-1001",
+            "name": "Sita Gurung",
+            "accountNumber": "**** **** 4521",
+            "bank": "Sagarmatha Bank"
+        },
+        {
+            "id": "p-1002",
+            "name": "Bikash Thapa",
+            "accountNumber": "**** **** 8890",
+            "bank": "Nabil Bank"
+        },
+        {
+            "id": "p-1003",
+            "name": "Anisha KC",
+            "accountNumber": "**** **** 1203",
+            "bank": "Sagarmatha Bank"
+        }
+    ],
+    "bills": [
+        {
+            "id": "bill-1001",
+            "billerId": "b-1001",
+            "title": "Electricity bill",
+            "amountDue": 2350,
+            "dueDate": "2026-08-12",
+            "status": "due"
+        },
+        {
+            "id": "bill-1002",
+            "billerId": "b-1002",
+            "title": "Postpaid phone bill",
+            "amountDue": 1450,
+            "dueDate": "2026-08-18",
+            "status": "due"
+        },
+        {
+            "id": "bill-1003",
+            "billerId": "b-1003",
+            "title": "Internet bill",
+            "amountDue": 1499,
+            "dueDate": "2026-08-20",
+            "status": "due"
+        },
+        {
+            "id": "bill-1004",
+            "billerId": "b-1001",
+            "title": "Electricity bill",
+            "amountDue": 2210,
+            "dueDate": "2026-07-12",
+            "status": "paid"
+        }
+    ]
+}

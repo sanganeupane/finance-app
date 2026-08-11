@@ -1,0 +1,21 @@
+{
+    "customerId": "c-1001",
+    "month": "2026-07",
+    "totalWithdrawals": 6,
+    "totalFees": 1100,
+    "averageWithdrawal": 12500,
+    "byBranch": [
+        { "branch": "Naxal", "count": 2, "amount": 25000 },
+        { "branch": "Baneshwor", "count": 2, "amount": 20000 },
+        { "branch": "Thamel", "count": 1, "amount": 15000 },
+        { "branch": "Bhaktapur", "count": 1, "amount": 15000 }
+    ],
+    "monthly": [
+        { "month": "Feb", "amount": 60000 },
+        { "month": "Mar", "amount": 75000 },
+        { "month": "Apr", "amount": 50000 },
+        { "month": "May", "amount": 90000 },
+        { "month": "Jun", "amount": 65000 },
+        { "month": "Jul", "amount": 75000 }
+    ]
+}

@@ -1,16 +1,17 @@
-import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
+import type { ComponentProps, ReactNode, Ref } from 'react';
 
 import { cn } from '@/utils/cn';
 
 export type IconButtonVariant = 'primary' | 'outline' | 'ghost' | 'soft';
 
-export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps extends ComponentProps<'button'> {
     variant?: IconButtonVariant;
     /** Accessible name. Required — the button renders an icon only. */
     label: string;
     size?: 'md' | 'lg';
     icon: ReactNode;
     badge?: ReactNode;
+    ref?: Ref<HTMLButtonElement>;
 }
 
 const variantClasses: Record<IconButtonVariant, string> = {
@@ -20,8 +21,18 @@ const variantClasses: Record<IconButtonVariant, string> = {
     soft: 'bg-primary-soft text-primary hover:bg-primary-soft/70',
 };
 
-export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
-    ({ className, variant = 'ghost', label, size = 'md', icon, badge, type = 'button', ...props }, ref) => (
+export function IconButton({
+    className,
+    variant = 'ghost',
+    label,
+    size = 'md',
+    icon,
+    badge,
+    type = 'button',
+    ref,
+    ...props
+}: IconButtonProps) {
+    return (
         <button
             ref={ref}
             type={type}
@@ -43,7 +54,5 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
                 </span>
             ) : null}
         </button>
-    ),
-);
-
-IconButton.displayName = 'IconButton';
+    );
+}

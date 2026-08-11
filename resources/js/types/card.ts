@@ -11,10 +11,12 @@ export interface Card {
     type: CardType;
     status: CardStatus;
     cardNumber: string; // full PAN — only ever render via maskCardNumber()
+    maskedNumber: string;
     holderName: string;
     expiryMonth: number;
     expiryYear: number;
     cvv: string; // never expose; used by flows that require verification
     creditLimit?: number;
     outstandingBalance?: number;
+    availableCredit?: number;
 }

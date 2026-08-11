@@ -1,0 +1,14 @@
+{
+    "customerId": "c-1001",
+    "month": "2026-07",
+    "totalSpent": 42300,
+    "comparisonToLastMonth": 12.5,
+    "transactions": 47,
+    "averageOrderValue": 900,
+    "byPlatform": [
+        { "platform": "Daraz", "amount": 24500, "percentage": 57.9 },
+        { "platform": "Sastodeal", "amount": 9300, "percentage": 22.0 },
+        { "platform": "Foodmandu", "amount": 6100, "percentage": 14.4 },
+        { "platform": "Hamrobazar", "amount": 2400, "percentage": 5.7 }
+    ]
+}
