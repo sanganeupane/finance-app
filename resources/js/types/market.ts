@@ -43,6 +43,21 @@ export interface TrendingMarketItem extends MarketItem {
     sparkline: number[];
 }
 
+/** A tracked instrument on the user's watchlist. */
+export interface WatchlistItem extends MarketItem {
+    addedAt: string;
+    sparkline?: number[];
+}
+
+/** A curated, personalized investment recommendation (demo data). */
+export interface RecommendedInvestment extends MarketItem {
+    minimumInvestment: number;
+    potentialReturn: number;
+    score: number;
+    description: string;
+    matchedProfile: string;
+}
+
 export interface MarketSection {
     overview: MarketOverview;
     trending: TrendingMarketItem[];
@@ -50,4 +65,6 @@ export interface MarketSection {
     losers: MarketItem[];
     mostTraded: MarketItem[];
     opportunities: MarketItem[];
+    watchlist: WatchlistItem[];
+    recommendedInvestments: RecommendedInvestment[];
 }

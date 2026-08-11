@@ -15,5 +15,5 @@ export const CUSTOMER_NAV_ITEMS: CustomerNavItem[] = [
     { label: 'Payments', path: '/customer/payments', icon: ArrowLeftRight },
     { label: 'Wealth', path: '/customer/investments', icon: TrendingUp },
     { label: 'AI', path: '/customer/ai-insights', icon: Sparkles },
-    { label: 'More', path: '/customer/profile', icon: LayoutGrid },
+    { label: 'More', path: '/customer/more', icon: LayoutGrid },
 ];

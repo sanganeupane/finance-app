@@ -1,0 +1,28 @@
+{
+    "id": "u-1001",
+    "customerId": "c-1001",
+    "name": "Aarav Sharma",
+    "firstName": "Aarav",
+    "lastName": "Sharma",
+    "email": "aarav.sharma@example.com",
+    "phone": "+977 980-123-4567",
+    "dob": "1990-04-22",
+    "citizenshipNumber": "123-45-6789",
+    "address": "Gyaneshwor, Kathmandu",
+    "branch": "Naxal",
+    "memberSince": "2018-03-12",
+    "kycStatus": "verified",
+    "preferences": {
+        "currency": "NPR",
+        "language": "English",
+        "marketingEmails": false,
+        "smsAlerts": true
+    },
+    "settings": {
+        "biometricLogin": true,
+        "twoFactorAuth": true,
+        "transactionAlerts": true,
+        "darkMode": false,
+        "sessionTimeoutMinutes": 15
+    }
+}

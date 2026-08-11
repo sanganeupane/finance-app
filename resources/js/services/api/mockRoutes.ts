@@ -7,10 +7,12 @@ import {
     mockECommerce,
     mockFinancialHealthOverview,
     mockInvestments,
+    mockLoanDetails,
     mockLoans,
     mockMarket,
     mockNotifications,
     mockPayments,
+    mockProfile,
     mockSpending,
     mockTransactions,
     mockUsers,
@@ -18,6 +20,7 @@ import {
 
 export interface MockRequest {
     path: string;
+    method?: string;
     query?: Record<string, unknown>;
     body?: unknown;
     headers?: Record<string, string>;
@@ -80,8 +83,45 @@ export const mockRoutes: MockRoute[] = [
         resolve: () => ok(mockCards),
     },
     {
+        pattern: /^\/api\/v1\/cards\/[^/]+\/transactions$/,
+        resolve: (match) => {
+            const id = match[1];
+            return ok(mockTransactions.filter((item) => item.cardId === id || item.id === id));
+        },
+    },
+    {
+        pattern: /^\/api\/v1\/cards\/[^/]+$/,
+        resolve: (match) => {
+            const id = match[1];
+            const card = mockCards.find((item) => item.id === id) ?? mockCards[0];
+            return ok(card);
+        },
+    },
+    {
+        pattern: /^\/api\/v1\/loans\/[^/]+$/,
+        resolve: (match) => {
+            const id = match[1];
+            const loan = mockLoanDetails.find((item) => item.id === id) ?? mockLoanDetails[0];
+            return ok(loan);
+        },
+    },
+    {
         pattern: /^\/api\/v1\/loans$/,
         resolve: () => ok(mockLoans),
+    },
+    {
+        pattern: /^\/api\/v1\/transactions\/[^/]+$/,
+        resolve: (match) => {
+            const id = match[1];
+            return ok(mockTransactions.find((item) => item.id === id) ?? mockTransactions[0]);
+        },
+    },
+    {
+        pattern: /^\/api\/v1\/investments\/[^/]+$/,
+        resolve: (match) => {
+            const id = match[1];
+            return ok(mockInvestments.find((item) => item.id === id) ?? mockInvestments[0]);
+        },
     },
     {
         pattern: /^\/api\/v1\/investments$/,
@@ -114,6 +154,14 @@ export const mockRoutes: MockRoute[] = [
     {
         pattern: /^\/api\/v1\/market\/overview$/,
         resolve: () => ok(mockMarket.overview),
+    },
+    {
+        pattern: /^\/api\/v1\/market\/watchlist$/,
+        resolve: () => ok(mockMarket.watchlist),
+    },
+    {
+        pattern: /^\/api\/v1\/market\/recommended$/,
+        resolve: () => ok(mockMarket.recommendedInvestments),
     },
     {
         pattern: /^\/api\/v1\/market\/trending$/,
@@ -178,12 +226,33 @@ export const mockRoutes: MockRoute[] = [
         },
     },
     {
+        pattern: /^\/api\/v1\/notifications\/read-all$/,
+        resolve: (_match, request) => {
+            if (request.method === 'PATCH') {
+                return ok(mockNotifications.map((item) => ({ ...item, isRead: true })));
+            }
+            return ok(mockNotifications);
+        },
+    },
+    {
+        pattern: /^\/api\/v1\/notifications\/[^/]+\/read$/,
+        resolve: (match) => {
+            const id = match[1];
+            const item = mockNotifications.find((notification) => notification.id === id) ?? mockNotifications[0];
+            return ok({ ...item, isRead: true });
+        },
+    },
+    {
         pattern: /^\/api\/v1\/notifications$/,
         resolve: () => ok(mockNotifications),
     },
     {
         pattern: /^\/api\/v1\/user$/,
         resolve: () => ok(mockUsers),
+    },
+    {
+        pattern: /^\/api\/v1\/profile$/,
+        resolve: () => ok(mockProfile),
     },
     {
         pattern: /^\/api\/v1\/customer$/,

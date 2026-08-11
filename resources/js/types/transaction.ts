@@ -18,6 +18,7 @@ export type TransactionCategory =
 export interface Transaction {
     id: string;
     accountId: string;
+    cardId?: string | null;
     type: TransactionType;
     status: TransactionStatus;
     category: TransactionCategory;

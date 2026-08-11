@@ -58,6 +58,7 @@ class ApiClient {
         const match = route.pattern.exec(path);
         const payload = route.resolve(match ?? ([] as unknown as RegExpExecArray), {
             path,
+            method: options.method ?? 'GET',
             query: options.query as Record<string, unknown> | undefined,
             body: options.body,
             headers: options.headers,

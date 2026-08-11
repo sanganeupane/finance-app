@@ -1,6 +1,11 @@
 import { apiClient, unwrap } from '../client';
 import { API_ENDPOINTS } from '../endpoints';
-import type { MarketItem, MarketOverview } from '@/types/market';
+import type {
+    MarketItem,
+    MarketOverview,
+    RecommendedInvestment,
+    WatchlistItem,
+} from '@/types/market';
 
 export const marketService = {
     overview: async () =>
@@ -20,4 +25,12 @@ export const marketService = {
 
     opportunities: async () =>
         unwrap(apiClient.get<{ data: MarketItem[] }>(API_ENDPOINTS.market.opportunities)),
+
+    watchlist: async () =>
+        unwrap(apiClient.get<{ data: WatchlistItem[] }>(API_ENDPOINTS.market.watchlist)),
+
+    recommended: async () =>
+        unwrap(
+            apiClient.get<{ data: RecommendedInvestment[] }>(API_ENDPOINTS.market.recommended),
+        ),
 };

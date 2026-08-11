@@ -1,4 +1,5 @@
-import { BookOpen, FlaskConical, PlugZap } from 'lucide-react';
+import { BookOpen, FlaskConical, ListTree, PlugZap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import { API_CONFIG, API_ENDPOINTS } from '@/services/api';
 
@@ -85,6 +86,15 @@ export default function ApiDocsPage() {
                 <h1 className="text-2xl font-semibold tracking-tight text-ink">API reference</h1>
                 <p className="mt-1 text-sm text-muted">
                     Contract shared with the Laravel backend · simulated locally in mock mode.
+                </p>
+                <p className="mt-2">
+                    <Link
+                        to="/developer/api-data"
+                        className="inline-flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary-dark"
+                    >
+                        <ListTree className="h-3.5 w-3.5" aria-hidden />
+                        View detailed data contracts
+                    </Link>
                 </p>
             </header>
 

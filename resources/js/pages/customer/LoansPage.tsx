@@ -1,4 +1,4 @@
-import { HandCoins } from 'lucide-react';
+import { ChevronRight, HandCoins } from 'lucide-react';
 
 import { LoanCard } from '@/components/cards';
 import { PageState } from '@/components/common';
@@ -26,7 +26,12 @@ export default function LoansPage() {
                 {data?.length ? (
                     <div className="flex flex-col gap-2">
                         {data.map((loan) => (
-                            <LoanCard key={loan.id} loan={loan} />
+                            <LoanCard
+                                key={loan.id}
+                                loan={loan}
+                                to={`/customer/loans/${loan.id}`}
+                                trailing={<ChevronRight className="h-4 w-4 text-muted" aria-hidden />}
+                            />
                         ))}
                     </div>
                 ) : (

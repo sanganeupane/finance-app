@@ -7,6 +7,7 @@
 export const API_ENDPOINTS = {
     auth: {
         user: '/api/v1/user',
+        profile: '/api/v1/profile',
         login: '/api/v1/auth/login',
         logout: '/api/v1/auth/logout',
     },
@@ -65,6 +66,8 @@ export const API_ENDPOINTS = {
         losers: '/api/v1/market/losers',
         mostTraded: '/api/v1/market/most-traded',
         opportunities: '/api/v1/market/opportunities',
+        watchlist: '/api/v1/market/watchlist',
+        recommended: '/api/v1/market/recommended',
     },
     payments: {
         list: '/api/v1/payments',

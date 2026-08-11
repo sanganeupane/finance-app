@@ -4,3 +4,7 @@ export { MarketOverviewCard } from './MarketOverviewCard';
 export type { MarketOverviewCardProps } from './MarketOverviewCard';
 export { MarketList } from './MarketList';
 export type { MarketListProps } from './MarketList';
+export { MarketPreviewList } from './MarketPreviewList';
+export type { MarketPreviewListProps } from './MarketPreviewList';
+export { RecommendedCard } from './RecommendedCard';
+export type { RecommendedCardProps } from './RecommendedCard';

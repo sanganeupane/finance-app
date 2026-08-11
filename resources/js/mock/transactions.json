@@ -11,7 +11,8 @@
         "currency": "NPR",
         "reference": "TXN-884211",
         "balanceAfter": 2450500,
-        "performedAt": "2026-08-01T09:15:00"
+        "performedAt": "2026-08-01T09:15:00",
+        "cardId": "card-1002"
     },
     {
         "id": "tx-1002",
@@ -25,7 +26,8 @@
         "currency": "NPR",
         "reference": "TXN-884210",
         "balanceAfter": 2265500,
-        "performedAt": "2026-07-31T18:42:00"
+        "performedAt": "2026-07-31T18:42:00",
+        "cardId": "card-1001"
     },
     {
         "id": "tx-1003",
@@ -39,7 +41,8 @@
         "currency": "NPR",
         "reference": "TXN-884208",
         "balanceAfter": 2270320,
-        "performedAt": "2026-07-30T10:05:00"
+        "performedAt": "2026-07-30T10:05:00",
+        "cardId": "card-1002"
     },
     {
         "id": "tx-1004",
@@ -53,7 +56,8 @@
         "currency": "NPR",
         "reference": "TXN-884205",
         "balanceAfter": 2272670,
-        "performedAt": "2026-07-29T20:18:00"
+        "performedAt": "2026-07-29T20:18:00",
+        "cardId": "card-1001"
     },
     {
         "id": "tx-1005",
@@ -67,7 +71,8 @@
         "currency": "NPR",
         "reference": "TXN-884201",
         "balanceAfter": 2275870,
-        "performedAt": "2026-07-28T08:30:00"
+        "performedAt": "2026-07-28T08:30:00",
+        "cardId": "card-1001"
     },
     {
         "id": "tx-1006",
@@ -81,7 +86,8 @@
         "currency": "NPR",
         "reference": "TXN-884195",
         "balanceAfter": 480250,
-        "performedAt": "2026-07-27T14:22:00"
+        "performedAt": "2026-07-27T14:22:00",
+        "cardId": null
     },
     {
         "id": "tx-1007",
@@ -95,7 +101,8 @@
         "currency": "NPR",
         "reference": "TXN-884190",
         "balanceAfter": 2277370,
-        "performedAt": "2026-07-26T16:40:00"
+        "performedAt": "2026-07-26T16:40:00",
+        "cardId": "card-1001"
     },
     {
         "id": "tx-1008",
@@ -109,7 +116,8 @@
         "currency": "NPR",
         "reference": "TXN-884184",
         "balanceAfter": 2283470,
-        "performedAt": "2026-07-25T11:10:00"
+        "performedAt": "2026-07-25T11:10:00",
+        "cardId": "card-1001"
     },
     {
         "id": "tx-1009",
@@ -123,7 +131,8 @@
         "currency": "NPR",
         "reference": "TXN-884179",
         "balanceAfter": 2284330,
-        "performedAt": "2026-07-24T19:05:00"
+        "performedAt": "2026-07-24T19:05:00",
+        "cardId": "card-1001"
     },
     {
         "id": "tx-1010",
@@ -137,6 +146,7 @@
         "currency": "NPR",
         "reference": "TXN-884172",
         "balanceAfter": 2285480,
-        "performedAt": "2026-07-23T09:48:00"
+        "performedAt": "2026-07-23T09:48:00",
+        "cardId": "card-1001"
     }
 ]

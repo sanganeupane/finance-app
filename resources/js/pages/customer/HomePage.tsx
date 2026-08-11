@@ -1,20 +1,45 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CircleDollarSign, Sparkles, TrendingUp } from 'lucide-react';
+import { CircleDollarSign, Sparkles, TrendingUp, Wallet } from 'lucide-react';
 
-import { BalanceCard, InvestmentCard } from '@/components/cards';
-import { MarketOverviewCard } from '@/components/market';
-import { SectionHeader } from '@/components/common';
-import { PageState } from '@/components/common';
+import { AccountCard, BalanceCard, BankCard, InvestmentCard } from '@/components/cards';
+import { InsightCard } from '@/components/insights';
+import { MarketOverviewCard, MarketPreviewList, RecommendedCard } from '@/components/market';
+import { PageState, SectionHeader } from '@/components/common';
 import { TransactionList } from '@/components/transactions';
 import { useAsync } from '@/hooks/useAsync';
-import { dashboardService } from '@/services/api';
+import {
+    accountsService,
+    aiService,
+    dashboardService,
+    marketService,
+    spendingService,
+} from '@/services/api';
 import { formatCurrency, formatPercent } from '@/utils/format';
 import { resolveIcon } from '@/utils/icons';
 
 export default function HomePage() {
     const { status, data, error, refetch } = useAsync(() => dashboardService.get(), []);
     const [visible, setVisible] = useState(true);
+
+    const overviewState = useAsync(() => marketService.overview(), []);
+    const gainersState = useAsync(() => marketService.gainers(), []);
+    const losersState = useAsync(() => marketService.losers(), []);
+    const mostTradedState = useAsync(() => marketService.mostTraded(), []);
+    const watchlistState = useAsync(() => marketService.watchlist(), []);
+    const recommendedState = useAsync(() => marketService.recommended(), []);
+    const spendingState = useAsync(() => spendingService.get(), []);
+    const insightsState = useAsync(() => aiService.insights(), []);
+    const accountsState = useAsync(() => accountsService.list(), []);
+
+    const sparklines: Record<string, number[]> = {};
+    (watchlistState.data ?? []).forEach((item) => {
+        if (item.sparkline) sparklines[item.symbol] = item.sparkline;
+    });
+
+    const accounts = accountsState.data ?? [];
+    const primaryCard = data?.primaryCard;
+    const topInsight = insightsState.data?.[0];
 
     return (
         <section className="flex flex-col gap-5">
@@ -80,14 +105,119 @@ export default function HomePage() {
                             })}
                         </nav>
 
+                        <section aria-labelledby="accounts-heading">
+                            <SectionHeader
+                                title="Accounts"
+                                subtitle={`${data.summary.accounts.count} accounts · ${formatCurrency(data.summary.accounts.totalBalance)}`}
+                                linkTo="/customer/accounts"
+                            />
+                            <div className="mt-3 flex flex-col gap-2">
+                                {accounts.slice(0, 2).map((account) => (
+                                    <AccountCard
+                                        key={account.id}
+                                        account={account}
+                                        to={`/customer/accounts/${account.id}`}
+                                    />
+                                ))}
+                            </div>
+                        </section>
+
+                        {primaryCard ? (
+                            <section aria-labelledby="card-heading">
+                                <SectionHeader
+                                    title="Cards"
+                                    subtitle={`${data.summary.cards.count} cards · total limit ${formatCurrency(data.summary.cards.totalLimit)}`}
+                                    linkTo="/customer/cards"
+                                />
+                                <Link to={`/customer/cards/${primaryCard.id}`} className="mt-3 block">
+                                    <BankCard
+                                        holderName={primaryCard.holderName}
+                                        maskedNumber={primaryCard.maskedNumber}
+                                        expiryMonth={primaryCard.expiryMonth}
+                                        expiryYear={primaryCard.expiryYear}
+                                        brand={primaryCard.brand}
+                                        type={primaryCard.type}
+                                        currency={data.currency}
+                                    />
+                                </Link>
+                            </section>
+                        ) : null}
+
                         <section aria-labelledby="market-heading">
                             <SectionHeader
                                 title="Market snapshot"
-                                subtitle={`NEPSE ${data.marketSnapshot.status}`}
+                                subtitle={overviewState.data ? `NEPSE ${overviewState.data.status}` : undefined}
                                 linkTo="/customer/market"
                             />
                             <div className="mt-3">
-                                <MarketOverviewCard overview={data.marketSnapshot} />
+                                <PageState
+                                    status={overviewState.status}
+                                    error={overviewState.error}
+                                    onRetry={overviewState.refetch}
+                                >
+                                    {overviewState.data ? (
+                                        <MarketOverviewCard overview={overviewState.data} />
+                                    ) : null}
+                                </PageState>
+                            </div>
+                        </section>
+
+                        <section aria-labelledby="gainers-heading">
+                            <SectionHeader title="Top gainers" linkTo="/customer/market/gainers" />
+                            <div className="mt-3">
+                                <PageState
+                                    status={gainersState.status}
+                                    error={gainersState.error}
+                                    onRetry={gainersState.refetch}
+                                >
+                                    <MarketPreviewList items={gainersState.data ?? []} to="/customer/market/gainers" />
+                                </PageState>
+                            </div>
+                        </section>
+
+                        <section aria-labelledby="losers-heading">
+                            <SectionHeader title="Top losers" linkTo="/customer/market/losers" />
+                            <div className="mt-3">
+                                <PageState
+                                    status={losersState.status}
+                                    error={losersState.error}
+                                    onRetry={losersState.refetch}
+                                >
+                                    <MarketPreviewList items={losersState.data ?? []} to="/customer/market/losers" />
+                                </PageState>
+                            </div>
+                        </section>
+
+                        <section aria-labelledby="traded-heading">
+                            <SectionHeader title="Most traded" linkTo="/customer/market/trending" />
+                            <div className="mt-3">
+                                <PageState
+                                    status={mostTradedState.status}
+                                    error={mostTradedState.error}
+                                    onRetry={mostTradedState.refetch}
+                                >
+                                    <MarketPreviewList
+                                        items={mostTradedState.data ?? []}
+                                        to="/customer/market/trending"
+                                    />
+                                </PageState>
+                            </div>
+                        </section>
+
+                        <section aria-labelledby="watchlist-heading">
+                            <SectionHeader title="Watchlist" linkTo="/customer/market" />
+                            <div className="mt-3">
+                                <PageState
+                                    status={watchlistState.status}
+                                    error={watchlistState.error}
+                                    onRetry={watchlistState.refetch}
+                                >
+                                    <MarketPreviewList
+                                        items={watchlistState.data ?? []}
+                                        to="/customer/market"
+                                        sparklines={sparklines}
+                                    />
+                                </PageState>
                             </div>
                         </section>
 
@@ -113,6 +243,60 @@ export default function HomePage() {
                             </div>
                         </section>
 
+                        <section aria-labelledby="opportunities-heading">
+                            <SectionHeader title="Opportunities" linkTo="/customer/market/opportunities" />
+                            <div className="mt-3">
+                                <PageState
+                                    status={recommendedState.status}
+                                    error={recommendedState.error}
+                                    onRetry={recommendedState.refetch}
+                                >
+                                    <div className="flex flex-col gap-2">
+                                        {(recommendedState.data ?? []).slice(0, 3).map((item) => (
+                                            <RecommendedCard key={item.id} item={item} />
+                                        ))}
+                                    </div>
+                                </PageState>
+                            </div>
+                        </section>
+
+                        <section aria-labelledby="spending-heading">
+                            <SectionHeader title="Spending summary" subtitle="This month" linkTo="/customer/spending" />
+                            <div className="mt-3">
+                                <PageState
+                                    status={spendingState.status}
+                                    error={spendingState.error}
+                                    onRetry={spendingState.refetch}
+                                >
+                                    {spendingState.data ? (
+                                        <div className="grid grid-cols-2 gap-3">
+                                            <div className="rounded-lg border border-line bg-surface p-4">
+                                                <p className="text-xs text-muted">Total spent</p>
+                                                <p className="mt-1 font-semibold text-ink">
+                                                    {formatCurrency(spendingState.data.totalSpent)}
+                                                </p>
+                                            </div>
+                                            <div className="rounded-lg border border-line bg-surface p-4">
+                                                <p className="text-xs text-muted">Top category</p>
+                                                <p className="mt-1 font-semibold text-ink capitalize">
+                                                    {spendingState.data.categories[0]?.category ?? '—'}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ) : null}
+                                </PageState>
+                            </div>
+                        </section>
+
+                        {topInsight ? (
+                            <section aria-labelledby="insight-heading">
+                                <SectionHeader title="AI insight" subtitle="Personalized for you" linkTo="/customer/ai-insights" />
+                                <div className="mt-3">
+                                    <InsightCard insight={topInsight} />
+                                </div>
+                            </section>
+                        ) : null}
+
                         <section aria-labelledby="activity-heading">
                             <SectionHeader
                                 title="Recent activity"
@@ -124,7 +308,8 @@ export default function HomePage() {
                             </div>
                         </section>
 
-                        <p className="text-center text-xs text-muted">
+                        <p className="flex items-center justify-center gap-1.5 text-center text-xs text-muted">
+                            <Wallet className="h-3.5 w-3.5" aria-hidden />
                             Total invested {formatCurrency(data.summary.investments.totalValue)} ·{' '}
                             {formatPercent(data.marketSnapshot.percentage)} index change
                         </p>

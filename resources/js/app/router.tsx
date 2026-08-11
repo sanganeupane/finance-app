@@ -14,6 +14,7 @@ const TransactionsPage = lazy(() => import('@/pages/customer/TransactionsPage'))
 const CardsPage = lazy(() => import('@/pages/customer/CardsPage'));
 const CardDetailPage = lazy(() => import('@/pages/customer/CardDetailPage'));
 const LoansPage = lazy(() => import('@/pages/customer/LoansPage'));
+const LoanDetailPage = lazy(() => import('@/pages/customer/LoanDetailPage'));
 const DepositsPage = lazy(() => import('@/pages/customer/DepositsPage'));
 const InvestmentsPage = lazy(() => import('@/pages/customer/InvestmentsPage'));
 const SpendingPage = lazy(() => import('@/pages/customer/SpendingPage'));
@@ -25,6 +26,7 @@ const RecommendationsPage = lazy(() => import('@/pages/customer/RecommendationsP
 const CopilotPage = lazy(() => import('@/pages/customer/CopilotPage'));
 const NotificationsPage = lazy(() => import('@/pages/customer/NotificationsPage'));
 const ProfilePage = lazy(() => import('@/pages/customer/ProfilePage'));
+const MorePage = lazy(() => import('@/pages/customer/MorePage'));
 
 const MarketOverviewPage = lazy(() => import('@/pages/customer/MarketOverviewPage'));
 const MarketTrendingPage = lazy(() => import('@/pages/customer/MarketTrendingPage'));
@@ -50,6 +52,7 @@ const EmployeeSettingsPage = lazy(() => import('@/pages/employee/SettingsPage'))
 
 const DesignSystemPage = lazy(() => import('@/pages/DesignSystemPage'));
 const ApiDocsPage = lazy(() => import('@/pages/ApiDocsPage'));
+const ApiDataPage = lazy(() => import('@/pages/ApiDataPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
 function withSuspense(node: ReactNode) {
@@ -73,6 +76,7 @@ export const router = createBrowserRouter([
             { path: 'cards', element: withSuspense(<CardsPage />) },
             { path: 'cards/:id', element: withSuspense(<CardDetailPage />) },
             { path: 'loans', element: withSuspense(<LoansPage />) },
+            { path: 'loans/:id', element: withSuspense(<LoanDetailPage />) },
             { path: 'deposits', element: withSuspense(<DepositsPage />) },
             { path: 'investments', element: withSuspense(<InvestmentsPage />) },
             { path: 'spending', element: withSuspense(<SpendingPage />) },
@@ -84,6 +88,7 @@ export const router = createBrowserRouter([
             { path: 'copilot', element: withSuspense(<CopilotPage />) },
             { path: 'notifications', element: withSuspense(<NotificationsPage />) },
             { path: 'profile', element: withSuspense(<ProfilePage />) },
+            { path: 'more', element: withSuspense(<MorePage />) },
             { path: 'market', element: withSuspense(<MarketOverviewPage />) },
             { path: 'market/trending', element: withSuspense(<MarketTrendingPage />) },
             { path: 'market/gainers', element: withSuspense(<TopGainersPage />) },
@@ -118,6 +123,10 @@ export const router = createBrowserRouter([
     {
         path: '/api-docs',
         element: withSuspense(<ApiDocsPage />),
+    },
+    {
+        path: '/developer/api-data',
+        element: withSuspense(<ApiDataPage />),
     },
     {
         path: '*',

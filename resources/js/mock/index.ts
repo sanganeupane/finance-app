@@ -19,4 +19,6 @@ export { default as mockECommerce } from './ecommerce.json';
 export { default as mockAtm } from './atm.json';
 export { default as mockAiInsights } from './ai-insights.json';
 export { default as mockUsers } from './users.json';
+export { default as mockProfile } from './profile.json';
 export { default as mockFinancialHealthOverview } from './financial-health.json';
+export { default as mockLoanDetails } from './loan-details.json';
